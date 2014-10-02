@@ -79,14 +79,12 @@ public class Tank extends GameObject {
     }
 
     private void move(float touchpadX, float touchpadY) {
-        if (!gameObjectsManager.collides(this)) {
-            float x = (sprite.getX() + touchpadX * SPEED + sprite.getBoundingRectangle().getWidth() / 2) % TanksGame.SCREEN_WIDTH;
-            float y = (sprite.getY() + touchpadY * SPEED + sprite.getBoundingRectangle().getHeight() / 2) % TanksGame.SCREEN_HEIGHT;
-            if (x < 0) x += TanksGame.SCREEN_WIDTH;
-            if (y < 0) y += TanksGame.SCREEN_HEIGHT;
-            sprite.setX(x - sprite.getBoundingRectangle().getWidth() / 2);
-            sprite.setY(y - sprite.getBoundingRectangle().getHeight() / 2);
-        }
+        float x = (sprite.getX() + touchpadX * SPEED + sprite.getBoundingRectangle().getWidth() / 2) % TanksGame.SCREEN_WIDTH;
+        float y = (sprite.getY() + touchpadY * SPEED + sprite.getBoundingRectangle().getHeight() / 2) % TanksGame.SCREEN_HEIGHT;
+        if (x < 0) x += TanksGame.SCREEN_WIDTH;
+        if (y < 0) y += TanksGame.SCREEN_HEIGHT;
+        sprite.setX(x - sprite.getBoundingRectangle().getWidth() / 2);
+        sprite.setY(y - sprite.getBoundingRectangle().getHeight() / 2);
     }
 
 
