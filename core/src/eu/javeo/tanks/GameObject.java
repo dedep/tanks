@@ -9,8 +9,8 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
  */
 public abstract class GameObject {
 
+    protected GameObjectsManager gameObjectsManager;
     protected Sprite sprite;
-    protected TiledMap map;
 
     public abstract void init();
     public void draw() {}
